@@ -1,0 +1,46 @@
+{# Shared pieces used by several pages. #}
+
+{# Email link assembled by JavaScript so the address isn't sitting in the page for scrapers.
+   Without JavaScript it reads "name [at] domain". #}
+{% macro email_link(label=None, cls="") -%}
+<a class="js-email {{ cls }}" href="#" data-u="{{ email_user }}" data-d="{{ email_domain }}"{% if label %} data-keep{% endif %}>{{ label or (email_user ~ ' [at] ' ~ email_domain) }}</a>
+{%- endmacro %}
+
+{# One research card. show_theme adds the theme name above the title (used on the home page). #}
+{% macro card(p, show_theme=false) %}
+<div class="card{% if not (p.image or p.animation) %} card--text{% endif %}" id="{{ p.id }}">
+  {% set src = p.animation or p.image %}
+  {% if src %}
+  <div class="card__fig"{% if p.fig_ratio %} style="aspect-ratio: {{ p.fig_ratio }}"{% endif %}>
+    <a class="card__figlink" href="{{ src | v }}" data-lightbox
+       data-caption="{{ p.title }}{% if p.credit %}. {{ p.credit }}{% endif %}"
+       aria-label="Enlarge figure: {{ p.title }}">
+      {% if p.animation %}
+      <picture>
+        {% if p.still %}<source media="(prefers-reduced-motion: reduce)" srcset="{{ p.still | v }}">{% endif %}
+        <img class="js-anim" src="{{ p.animation | v }}" data-anim="{{ p.animation | v }}" data-still="{{ p.still | v }}"
+             data-loop-ms="{{ p.loop_ms or 0 }}" alt="{{ p.image_alt }}" loading="lazy">
+      </picture>
+      {% else %}
+      <img src="{{ p.image | v }}" alt="{{ p.image_alt }}" loading="lazy">
+      {% endif %}
+    </a>
+    {% if p.animation %}<button class="anim-toggle" type="button" hidden>Pause</button>{% endif %}
+  </div>
+  {% endif %}
+  <div class="card__body">
+    {% if show_theme %}<p class="card__theme">{{ p.theme_title }}</p>{% endif %}
+    <p class="card__meta">
+      <span class="status status--{{ p.status }}">{{ status_labels.get(p.status, p.status) }}</span>
+      {% if p.venue %}<span class="card__venue">{{ p.venue }}</span>{% endif %}
+    </p>
+    <h3 class="card__title">{{ p.title }}</h3>
+    <p class="card__summary">{{ p.summary | trim | safe_html }}</p>
+    {% if p.collaborators %}<p class="card__collab"><span class="label">With</span> {{ p.collaborators }}</p>{% endif %}
+    {% if p.credit %}<p class="card__credit">{{ p.credit }}</p>{% endif %}
+    {% if p.links %}
+    <p class="card__links">{% for l in p.links %}<a href="{{ l.url }}">{{ l.label }} →</a>{% endfor %}</p>
+    {% endif %}
+  </div>
+</div>
+{% endmacro %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% from "_macros.html" import card %}
+{% set title = "Research" %}
+{% block content %}
+<section class="section section--tint page">
+  <div class="wrap">
+    <p class="eyebrow">{{ n_projects }} projects in {{ research.themes | length }} themes</p>
+    <h1 class="page__title">Research</h1>
+    {% if research.intro %}<p class="section__lede">{{ research.intro | trim }}</p>{% endif %}
+
+    <nav class="theme-index" aria-label="Research themes">
+      {% for t in research.themes %}
+        <a href="#{{ t.id }}"><span class="mono">{{ '%02d' % loop.index }}</span> {{ t.title }}</a>
+      {% endfor %}
+    </nav>
+
+    {% for t in research.themes %}
+    <article class="theme" id="{{ t.id }}">
+      <header class="theme__head">
+        <span class="theme__num mono">{{ '%02d' % loop.index }}</span>
+        <div>
+          <h2 class="theme__title">{{ t.title }}</h2>
+          <p class="theme__blurb">{{ t.blurb | trim | safe_html }}</p>
+          {% if t.also %}
+          <div class="theme__also">
+            <p class="label">Also exploring</p>
+            <ul>{% for a in t.also %}<li>{{ a | safe_html }}</li>{% endfor %}</ul>
+          </div>
+          {% endif %}
+        </div>
+      </header>
+      <div class="cards">
+        {% for p in t.projects %}{{ card(p) }}{% endfor %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

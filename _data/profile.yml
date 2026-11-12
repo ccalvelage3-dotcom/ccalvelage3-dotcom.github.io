@@ -1,0 +1,64 @@
+# Site-wide profile. Edit freely; run `python build.py` to regenerate.
+name: Christopher M. Calvelage
+# Public address of the site, used for link previews and the sitemap.
+site_url: https://ccalvelage3-dotcom.github.io
+short_name: Chris Calvelage
+credentials: Ph.D.
+role: Sensor Group Manager
+org: EarthScope Consortium
+org_url: https://www.earthscope.org
+tagline: >-
+  Geophysicist calibrating seismometers and fiber-optic sensors, using their data to study
+  landslides, floods, earthquakes, and Earth's mantle.
+# Optional headshot: drop a square image at assets/img/headshot.jpg and set the path here.
+headshot: assets/img/headshot.jpg
+email: chris.calvelage@earthscope.org
+# LinkedIn shows as a button next to Email once a URL is filled in.
+linkedin: https://www.linkedin.com/in/christopher-calvelage3/
+links:
+  - label: Google Scholar
+    url: https://scholar.google.com/citations?user=_cMv0ogAAAAJ&hl=en
+  - label: ORCID
+    url: https://orcid.org/0009-0005-9807-4255
+  - label: GitHub
+    url: https://github.com/ccalvelage3-dotcom
+# Shown beside the bio, newest first. `url` is optional.
+recent:
+  - date: Dec 2026
+    text: Co-convening AGU26 session IN038 on standards and practices for field work in hydrology, seismology, and near-surface geophysics
+  - date: Dec 2026
+    text: AGU26 posters on the Rasuwa–Trishuli avalanche and the Socorro swarm, plus co-authored abstracts on <em>Seismica</em> and Basin and Range core complexes
+    url: index.html#publications
+  - date: Nov 2026
+    text: Preprint on the October 2026 Budhi Gandaki rock avalanche submitted, with its data and code on Zenodo
+    url: research.html#budhi
+  - date: Sep 2026
+    text: An international study of the Rasuwa–Trishuli rock–ice avalanche, including our seismic analysis, is now in review
+    url: research.html#rasuwa
+  - date: Sep 2026
+    text: Preprint on the June 2026 Socorro earthquake swarm
+    url: https://doi.org/10.31223/X56500
+  - date: Jul 2026
+    text: DAS rainfall–runoff paper published in Seismological Research Letters, with its dataset on Zenodo
+    url: https://doi.org/10.1785/0220260087
+  - date: "2026"
+    text: Joined the editorial board of <em>Seismica</em>
+bio:
+  - >-
+    I manage the Sensor Group at EarthScope Consortium. We test and evaluate the NSF-supported
+    instruments that researchers take into the field: broadband and short-period seismometers,
+    accelerometers, infrasound sensors, ground-penetrating radar, and distributed acoustic sensing
+    (DAS) systems. I also advise EarthScope's engineers and the research community on geophysical
+    instruments, and I co-led the Design and Power Systems groups of EarthScope's Common Sensor Platform project.
+  - >-
+    My group's research covers both ends of a seismic recording. On the instrument side, we study
+    how seismometers and fiber-optic cables respond to ground motion, how to calibrate them, and how
+    far we can trust data recorded outside an instrument's ideal frequency range. On the Earth side,
+    we combine seismic and infrasound data with computer simulations to study landslides, floods, and
+    earthquake swarms. We also model mantle convection to understand how the history of subduction
+    shapes Earth's topography and the orientation of its spin axis.
+  - >-
+    I earned my Ph.D. in geophysics from the University of Houston in 2024 and my M.S. and B.S. from
+    Purdue University, and I spent two stints as an R&amp;D student researcher at Sandia National
+    Laboratories. I'm an editor for <em>Seismica</em> and serve on the AGU Distributed Sensing
+    Technical Committee.

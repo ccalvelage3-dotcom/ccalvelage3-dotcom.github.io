@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% set title = "Page not found" %}
+{# GitHub Pages serves this for any missing path, so resolve links from the site root. #}
+{% block base %}<base href="/">{% endblock %}
+{% block content %}
+<section class="section page page--404">
+  <div class="wrap wrap--narrow">
+    <p class="eyebrow">404</p>
+    <h1 class="page__title">This page doesn't exist</h1>
+    <p class="section__lede">The link may be out of date. Try one of these instead:</p>
+    <p class="hero__links">
+      <a class="btn btn--solid" href="index.html">Home</a>
+      <a class="btn" href="research.html">Research</a>
+      <a class="btn" href="index.html#publications">Publications</a>
+      <a class="btn" href="cv.html">CV</a>
+    </p>
+  </div>
+</section>
+{% endblock %}

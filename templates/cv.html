@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% from "_macros.html" import email_link %}
+{% set title = "CV" %}
+{% block content %}
+<section class="section cv">
+  <div class="wrap wrap--narrow">
+    <header class="cv__head">
+      <p class="eyebrow">Curriculum vitae</p>
+      <h1>{{ profile.name }}, {{ profile.credentials }}</h1>
+      <p>{{ profile.role }} · <a href="{{ profile.org_url }}">{{ profile.org }}</a></p>
+      <p class="mono cv__contact">
+        {{ email_link() }}
+        {% if profile.linkedin %} · <a href="{{ profile.linkedin }}">LinkedIn</a>{% endif %}
+        {% for l in profile.links %} · <a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}
+      </p>
+      <button class="btn cv__print" type="button" onclick="window.print()">Print / save as PDF</button>
+    </header>
+
+    <h2 class="cv__h">Education</h2>
+    <ul class="cv__list">
+      {% for e in cv.education %}
+      <li class="cv__row"><span class="cv__date mono">{{ e.year }}</span>
+        <div><strong>{{ e.degree }}</strong>, {{ e.school }}{% if e.detail %}<br><span class="muted">{{ e.detail }}</span>{% endif %}</div></li>
+      {% endfor %}
+    </ul>
+
+    <h2 class="cv__h">Experience</h2>
+    <ul class="cv__list">
+      {% for x in cv.experience %}
+      <li class="cv__row"><span class="cv__date mono">{{ x.dates }}</span>
+        <div><strong>{{ x.title }}</strong>, {{ x.org }}
+          {% if x.points %}<ul class="cv__points">{% for pt in x.points %}<li>{{ pt }}</li>{% endfor %}</ul>{% endif %}
+        </div></li>
+      {% endfor %}
+    </ul>
+
+    <h2 class="cv__h">Publications</h2>
+    {% for g in pub_groups %}
+      <h3 class="cv__sub">{{ g.title }}</h3>
+      <ol class="cv__pubs">
+        {% for p in g['items'] %}
+        <li>{{ p.authors | authors }} ({{ p.year }}). {{ p.title | trim }}. <em>{{ p.venue }}</em>{% if p.volume %}, {{ p.volume }}{% endif %}.{% if p.doi %} <a href="https://doi.org/{{ p.doi }}">doi:{{ p.doi }}</a>{% endif %}{% if p.note %} <span class="muted">({{ p.note }})</span>{% endif %}</li>
+        {% endfor %}
+      </ol>
+    {% endfor %}
+
+    <h2 class="cv__h">Grants &amp; allocations</h2>
+    <ul class="cv__bullets">{% for g in cv.grants %}<li>{{ g }}</li>{% endfor %}</ul>
+
+    <h2 class="cv__h">Service</h2>
+    <ul class="cv__bullets">{% for s in cv.service %}<li>{{ s | safe_html }}</li>{% endfor %}</ul>
+
+    <h2 class="cv__h">Talks &amp; outreach</h2>
+    <ul class="cv__bullets">{% for t in cv.talks %}<li>{{ t | safe_html }}</li>{% endfor %}</ul>
+
+    <h2 class="cv__h">Awards &amp; honors</h2>
+    <ul class="cv__list">
+      {% for a in cv.awards %}<li class="cv__row"><span class="cv__date mono">{{ a.year }}</span><div>{{ a.name }}</div></li>{% endfor %}
+    </ul>
+
+    <h2 class="cv__h">Skills</h2>
+    <p>{{ cv.skills | trim }}</p>
+
+    <h2 class="cv__h">Memberships</h2>
+    <p>{{ cv.memberships | join(' · ') }}</p>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,341 @@
+# Research themes and project cards.
+#
+# status: published | preprint | in-review | in-prep | active | report
+#   published  peer-reviewed paper
+#   preprint   preprint posted and under review
+#   in-review  submitted to a journal
+#   in-prep    results in hand, manuscript being written
+#   active     analysis under way, no manuscript yet
+#   report     quick look at a recent event
+# Each theme is a panel on the home page:
+#   figure      the project whose figure stands for the theme
+#   highlights  two or three projects listed under it
+#   also        optional one-line ideas, listed on the Research page without a card
+# Keep summaries to about two sentences, free of unpublished numbers or conclusions.
+# Figures live in assets/img/research/; add new ones with tools/add_figure.py.
+
+intro: >-
+  Our projects range from testing seismic instruments to modeling the deep interior of the planet,
+  often with collaborators at universities and national laboratories.
+
+themes:
+  # ===================================================================== 01
+  - id: instruments
+    title: Instruments & sensing
+    blurb: >-
+      At EarthScope, my group tests the seismic and geophysical sensors used by the U.S. research
+      community. Our research grows out of that work: how accurately these instruments record ground
+      motion, how best to calibrate them, and how to report the uncertainty in their data.
+    figure: field-das
+    highlights: [dascal, corner, field-das]
+    projects:
+      - id: dascal
+        title: Calibrating fiber-optic seismic cables
+        status: in-prep
+        summary: >-
+          Every stretch of a fiber-optic cable is coupled to the ground a little differently, so raw
+          DAS recordings can't be read directly as ground motion. We measure and remove each
+          channel's response, turning DAS data into calibrated ground motion with uncertainties.
+        image: assets/img/research/dascal-calibration.png
+        image_alt: "A blast recorded on a buried DAS cable: the raw record disagrees with a nearby seismometer (top), while the calibrated record matches it (bottom)"
+        links:
+          - label: Software · DAScal
+            url: "index.html#dascal"
+
+      - id: corner
+        title: How reliable is seismic data below the corner frequency?
+        status: in-prep
+        summary: >-
+          Seismologists routinely use broadband data from below an instrument's corner frequency,
+          where small calibration errors grow quickly. We constrain how those errors carry through to
+          the data and give users a simple way to account for them.
+        image: assets/img/research/corner-kernels.png
+        image_alt: Seismometer response and phase against frequency, and how sensitive the response is to the corner period
+        links:
+          - label: Software · bbcalpy
+            url: "index.html#bbcalpy"
+
+      - id: microcombs
+        title: DAS with optical frequency combs
+        status: active
+        summary: >-
+          Random fading of the light scattered back from the glass leaves some DAS channels noisy or
+          unreliable. Using theory, simulations, and field data, we ask how much probing the fiber with
+          an optical frequency comb reduces fading and improves data quality along the cable.
+        image: assets/img/research/microcomb-lines.png
+        image_alt: Simulated spread of channel noise when the fiber is probed with one to ten laser frequencies
+
+      - id: field-das
+        title: "DAS in the field: rainfall, runoff, and the shallow subsurface"
+        status: published
+        venue: Seismological Research Letters, 2026
+        summary: >-
+          With colleagues at New Mexico Tech, we use DAS to detect when desert rainfall turns into
+          runoff, image the shallow subsurface, and separate natural from human-made signals. We're
+          also part of DICE, a side-by-side comparison of DAS recording units with three national
+          laboratories.
+        collaborators: J. M. McLaughlin, S. L. Bilek, G. Karslioglu, D. Cadol, and others
+        image: assets/img/research/epic-cable.jpg
+        image_alt: Satellite view of the fiber-optic cable route at the EarthScope Primary Instrument Center in Socorro, New Mexico, colored by elevation
+        links:
+          - label: McLaughlin et al. 2026
+            url: https://doi.org/10.1785/0220260087
+          - label: Dataset
+            url: https://doi.org/10.5281/zenodo.18567520
+
+      - id: csp
+        title: The Common Sensor Platform
+        status: published
+        venue: Perspectives of Earth and Space Scientists, 2025
+        summary: >-
+          The platform is a modular station design developed jointly by NSF's GAGE and SAGE
+          facilities. Its core subsystems can be swapped or scaled to suit each site. I co-led its
+          Design and Power Systems groups.
+        collaborators: M. Staats, D. Mann, C. Pyatt, A. Scire, G. S. Mattioli, and the CSP team
+        credit: "Figure: Staats et al. (2025), CC BY-NC 4.0."
+        image: assets/img/research/csp-design.png
+        image_alt: "Diagram of the Common Sensor Platform: a single sensor station scales up to a modular sensor array with communications, and a single solar panel and battery scale up to a modular power system"
+        links:
+          - label: Staats et al. 2025
+            url: https://doi.org/10.1029/2025CN000298
+
+      - id: datacenter
+        title: Do data centers make the ground hum?
+        status: active
+        summary: >-
+          Data centers run cooling and electrical equipment around the clock. Using public seismic and
+          infrasound stations near data-center hubs worldwide, we're testing whether that equipment
+          leaves a measurable signal in the ground. It's an early project we plan to grow.
+        image: assets/img/research/datacenter-map.png
+        image_alt: World map of data-center hubs and the seismic stations near them
+
+  # ===================================================================== 02
+  - id: landslides
+    title: Landslides, floods & synthetic seismograms
+    blurb: >-
+      Large landslides and floods shake the ground, and seismometers hundreds or even thousands of
+      kilometers away can record them. We combine those recordings with flow simulations and
+      synthetic seismograms to constrain how slopes fail and how the resulting flows move, especially
+      in the Himalaya, where clouds and steep terrain often hide what happened.
+    figure: rasuwa
+    highlights: [rasuwa, ravaflow, budhi]
+    also:
+      - Whether open seismic stations could have recorded Bhutan's October 2026 glacial lake outburst flood
+      - Landslide seismograms computed in a fully three-dimensional Earth
+    projects:
+      - id: rasuwa
+        title: The 2026 Rasuwa–Trishuli rock–ice avalanche
+        status: in-review
+        summary: >-
+          In August 2026, a massive rock–ice avalanche on the Nepal–China border became a debris
+          flow and flood that swept down the Trishuli valley. As part of an international team, we
+          contributed the seismic analysis of when and how the slope failed.
+        collaborators: An international team led by Chengdu University of Technology
+        image: assets/img/research/rasuwa-flow-final.jpg
+        credit: "r.avaflow simulation of flow height, 10 minutes after the start of the model run."
+        image_alt: Simulated flow of the Rasuwa–Trishuli avalanche 10 minutes after the collapse, over shaded relief
+
+      - id: ravaflow
+        title: Synthetic seismograms from landslide simulations
+        status: in-prep
+        summary: >-
+          With Martin Mergili, we extended the open-source r.avaflow model to turn a simulated
+          landslide into synthetic seismograms at stations worldwide. Comparing them with real
+          recordings shows which parts of a simulation the data can confirm.
+        collaborators: M. Mergili (University of Graz)
+        credit: "Failed-mass outline: StoryMap by the Center for Land Surface Hazards (CLaSH)."
+        image: assets/img/research/ravaflow-event.jpg
+        image_alt: Simulated flow of the Rasuwa–Trishuli avalanche over shaded relief, colored by arrival time
+
+      - id: budhi
+        title: The 2026 Budhi Gandaki rock avalanche and flood
+        status: submitted
+        venue: EarthArXiv, 2026
+        summary: >-
+          In October 2026, a rock avalanche dammed a tributary of the Budhi Gandaki in central Nepal,
+          and the dam's collapse sent a flood downstream. With clouds hiding the source, we combine
+          seismic records with flow simulations to reconstruct how the slope failed.
+        image: assets/img/research/budhi-flow-300s.jpg
+        fig_ratio: 1 / 1
+        credit: "r.avaflow simulation of flow height, 5 minutes after the start of the model run."
+        image_alt: Simulated flow of the Budhi Gandaki rock avalanche 5 minutes into the model run, over shaded relief
+        collaborators: S. Huang, C.-M. Chen, B. Wang, B. Pratt-Sitaula, J. M. McLaughlin
+        links:
+          - label: Data & code
+            url: https://doi.org/10.5281/zenodo.24143591
+
+      - id: pyroclastic
+        title: How pyroclastic flows make tsunamis
+        status: active
+        summary: >-
+          Pyroclastic flows from the 2003 dome collapse at Montserrat entered the sea and generated
+          tsunamis that were recorded by borehole strainmeters. We link seismic recordings of the flows
+          to tsunami simulations to see what controls the size of the waves.
+        image: assets/img/research/montserrat-traveltime.png
+        image_alt: Map of tsunami travel time around Montserrat from the point where the flows entered the sea
+
+  # ===================================================================== 03
+  - id: geodynamics
+    title: "Mantle geodynamics: true polar wander & dynamic topography"
+    blurb: >-
+      We study how the history of subduction shapes convection in Earth's mantle, and how that
+      convection shows up at the surface as dynamic topography and in Earth's rotation as true polar
+      wander. The work grew out of my Ph.D., and we continue it with new software for modeling
+      planetary rotation and mantle flow on both Earth and Mars.
+    figure: tpw2025
+    highlights: [tpw2025, dt2024, tpwmethods]
+    also:
+      - Whether an active plume beneath Elysium fits what NASA's InSight mission tells us about Mars
+      - How new subduction zones begin, tested against the Wrangellia terrane in Alaska and British Columbia
+    projects:
+      - id: tpw2025
+        title: How subduction history steers Earth's spin axis
+        status: published
+        venue: Proceedings of the Royal Society A, 2025
+        summary: >-
+          Mantle convection moves mass inside Earth and slowly shifts the surface relative to the
+          spin axis. We tested how different plate-tectonic histories change the predicted path of
+          the pole over the past 190 million years.
+        collaborators: L. Colli, J. Wu, Y. A. Lin, Y. Zheng, M. R. Bajgiran
+        credit: "Figure: Calvelage et al. (2025), CC BY 4.0."
+        image: assets/img/research/tpw-2025.png
+        image_alt: Modeled path of true polar wander from 190 million years ago to today, compared with a paleomagnetic path
+        links:
+          - label: Read the paper
+            url: https://doi.org/10.1098/rspa.2024.0196
+          - label: Software · PyTPW2
+            url: "index.html#pytpw2"
+
+      - id: dt2024
+        title: Linking ancient subduction to today's topography
+        status: published
+        venue: Proceedings of the Royal Society A, 2024
+        summary: >-
+          Sinking slabs pull the surface down and rising mantle pushes it up, so today's topography
+          carries a memory of past plate motions. We compared the topography predicted by models with
+          different subduction histories against observed seafloor depths, focusing on northeast Asia.
+        collaborators: J. Wu, L. Colli, Y. A. Lin, Y. Zheng
+        image: assets/img/research/dt-2024.jpg
+        image_alt: Global map of predicted dynamic topography with hotspot locations
+        links:
+          - label: Read the paper
+            url: https://doi.org/10.1098/rspa.2024.0254
+
+      - id: tpwmethods
+        title: Modeling large shifts of Earth's spin axis
+        status: in-prep
+        summary: >-
+          Standard models of true polar wander break down when the pole moves tens of degrees. We're
+          developing a model that handles large shifts and accounts for how a layered, viscoelastic
+          Earth adjusts over many timescales.
+        image: assets/img/research/tpw-methods.jpg
+        image_alt: Four globes comparing different ways of modeling true polar wander
+        links:
+          - label: Software · PyTPW2
+            url: "index.html#pytpw2"
+
+      - id: dtmemory
+        title: Can topography tell plate reconstructions apart?
+        status: active
+        summary: >-
+          Using fast mantle-flow calculations, we constrain how much of today's dynamic topography
+          comes from each era of past subduction, and whether observations of it can distinguish
+          competing plate reconstructions.
+        image: assets/img/research/dt-memory.jpg
+        image_alt: Global maps of how predicted dynamic topography differs between two plate reconstructions, at 100, 85, and 60 million years ago and today
+        links:
+          - label: Software · mantlekernels
+            url: "index.html#mantlekernels"
+
+      - id: westernus
+        title: Lithosphere dynamics of southwestern North America
+        status: published
+        venue: Nature Communications, 2022
+        summary: >-
+          For my M.S. at Purdue, I modeled how a weak lower crust shaped the stretching of the Basin
+          and Range, work that fed into two studies led by Ali Bahadori and William Holt.
+        credit: "Figure: Bahadori et al. (2022), Nature Communications, CC BY 4.0."
+        image: assets/img/research/swna-topography.jpg
+        image_alt: Topographic maps of southwestern North America showing the Basin and Range, Colorado Plateau, and metamorphic core complexes
+        links:
+          - label: Bahadori et al. 2022a
+            url: https://doi.org/10.1038/s41467-022-31903-2
+          - label: Bahadori et al. 2022b
+            url: https://doi.org/10.1038/s41467-022-33361-2
+
+  # ===================================================================== 04
+  - id: newmexico
+    title: Earthquakes & magma in the Rio Grande rift
+    blurb: >-
+      Central New Mexico sits on the Rio Grande rift, above the Socorro Magma Body, a thin layer of
+      partly molten rock about 19 km below the surface. We study the region's earthquakes, test
+      whether seismic waves can image the magma body, and assess what natural and induced
+      earthquakes mean for seismic hazard across the state.
+    figure: smb
+    highlights: [socorro, smb, nmhazard]
+    projects:
+      - id: socorro
+        title: The June 2026 Socorro earthquake swarm
+        status: preprint
+        venue: EarthArXiv, 2026
+        summary: >-
+          In June 2026, several hundred small earthquakes struck directly above the Socorro Magma
+          Body. In our preprint, we compare a detailed new catalog with two decades of regional
+          seismicity and interpret the swarm as slip on existing rift faults.
+        collaborators: J. Aerts, S. Bilek, U. Basu (New Mexico Tech)
+        image: assets/img/research/socorro-swarm.png
+        image_alt: Map of the 2026 Socorro swarm, nearby faults, the outline of the magma body, and seismic stations
+        links:
+          - label: Read the preprint
+            url: https://doi.org/10.31223/X56500
+
+      - id: smb
+        title: Imaging the Socorro Magma Body
+        status: active
+        summary: >-
+          Satellite radar shows the ground above the magma body still slowly rising, but the magma body's
+          internal structure is still poorly known. We use simulations to test whether full-waveform inversion of local
+          earthquakes could image it.
+        credit: "Map: ground velocity from NASA OPERA satellite radar (InSAR), 2016–2025. Black outline: the magma body; purple dot: the 2026 swarm."
+        image: assets/img/research/smb-uplift.jpg
+        image_alt: Satellite radar map of ground velocity around Socorro, showing uplift centered over the outline of the magma body
+
+      - id: nmhazard
+        title: A seismic hazard model for New Mexico
+        status: active
+        summary: >-
+          New Mexico's earthquake hazard comes from two sources: slow-slipping rift faults beneath
+          its largest cities, and earthquakes induced by wastewater injection. We're building a statewide hazard model that treats the
+          two separately and comparing it with the USGS national model.
+        credit: "Research model, not for engineering use. See the USGS National Seismic Hazard Model."
+        image: assets/img/research/nm-hazard.jpg
+        image_alt: Research map of seismic hazard across New Mexico, with faults and cities
+
+  # ===================================================================== 05
+  - id: beyond
+    title: Beyond the solid Earth
+    blurb: >-
+      The tools we use on seismic data (careful calibration, open data, and inverse methods) also
+      apply well beyond the solid Earth, from the atmosphere to medical imaging.
+    figure: medimaging
+    highlights: [swift, medimaging]
+    projects:
+      - id: swift
+        title: Listening for a satellite's return
+        status: report
+        summary: >-
+          When NASA's Swift observatory reentered over Sumatra in November 2026, we searched public
+          seismic and infrasound recordings, including citizen-science stations, for its sonic boom.
+        image: assets/img/research/swift-reentry.png
+        image_alt: Ground track of the Swift reentry across Sumatra and the Malay Peninsula, with seismic and infrasound stations
+
+      - id: medimaging
+        title: Calibration and inverse problems in medical imaging
+        status: in-prep
+        summary: >-
+          Photoacoustic and ultrasound imaging face a familiar problem from seismology: how much of
+          the image reflects the instrument rather than the tissue? Using public datasets of test objects (phantoms) from
+          several scanners, we separate the two and compare reconstruction methods.
+        credit: "Data: OpenQPAIData (Gröhl et al., 2026), CC BY 4.0."
+        image: assets/img/research/photoacoustic.jpg
+        image_alt: A reference phantom and its reconstructions by several photoacoustic methods on two scanners

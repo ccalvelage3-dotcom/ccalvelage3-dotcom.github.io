@@ -1,0 +1,85 @@
+intro: >-
+  We write research software for instrument calibration, fiber-optic sensing, and geodynamics.
+  These packages are still in development, and their repositories are private for now. We plan to
+  release each one alongside the paper that describes it, and we're happy to share early versions on
+  request.
+
+items:
+  - name: bbcalpy
+    anchor: bbcalpy
+    tagline: Broadband seismometer calibration
+    language: Python · PyQt6
+    status: In use · private
+    status_key: active
+    description: >-
+      A desktop application for calibrating broadband seismometers. It estimates an instrument's
+      frequency response from signals sent through its calibration coil, compares the result with
+      the manufacturer's specification and with past calibrations, and keeps a record of every test.
+    features:
+      - Handles step and white-noise calibrations
+      - Solves for corner period and damping, with uncertainties and an automatic pass/fail check
+      - Plots the response and looks up nominal responses from the NRL and FDSN
+      - Stores every calibration in a database linked to the sensor's serial number
+    logo: assets/img/software/bbcalpy-logo.png
+    image: assets/img/software/bbcalpy-bode.png
+    image_alt: Bode plot of a measured seismometer response compared with the nominal response
+
+  - name: DAScal
+    anchor: dascal
+    tagline: Calibration for distributed acoustic sensing
+    language: Python ≥ 3.11 · command line
+    status: Pre-release · private
+    status_key: active
+    description: >-
+      DAScal measures, stores, and removes the instrument response of a DAS cable, including how
+      well each channel is coupled to the ground. It turns raw DAS recordings into ground strain,
+      strain rate, or velocity, with an uncertainty for every channel.
+    features:
+      - Builds the response from nearby seismometers, controlled sources, or distant earthquakes
+      - Writes standard StationXML, with a proposed DAS extension to the FDSN metadata standard
+      - Tested on buried, trenched, and telecom cables
+    logo: assets/img/software/dascal-banner.svg
+    image: assets/img/software/dascal-gordas.png
+    image_alt: An earthquake recorded on the GorDAS telecom fiber in Arcata, California. Converted without a coupling correction, the DAS record is far smaller than the ground motion the seismic nodes recorded; calibrated with DAScal, it matches them
+
+  - name: PyTPW2
+    anchor: pytpw2
+    tagline: True polar wander from mantle-convection models
+    language: Python ≥ 3.11
+    status: Pre-release · private
+    status_key: active
+    description: >-
+      PyTPW2 models true polar wander, the slow drift of a planet's surface relative to its spin
+      axis as mass moves around inside it. It takes the gravity field predicted by a
+      mantle-convection model and computes how the pole moves over time. It's a ground-up rewrite of
+      the code behind Calvelage et al. (2025) and reproduces that paper's results.
+    features:
+      - Ten formulations of the rotation equations, including ones that hold for large shifts of the pole
+      - Full viscoelastic response for Maxwell, Andrade, and Burgers rheologies
+      - Ready-made settings for Earth, Mars, Venus, Mercury, the Moon, and Europa
+      - About 290 automated tests, plus documentation and continuous integration
+    logo: assets/img/software/pytpw2-wordmark.svg
+    image: assets/img/software/pytpw2-polar.png
+    image_alt: Polar map of a modeled true-polar-wander path computed with PyTPW2
+    related:
+      - label: Calvelage et al. 2025
+        url: https://doi.org/10.1098/rspa.2024.0196
+
+  - name: mantlekernels
+    anchor: mantlekernels
+    tagline: How a planet's surface and gravity respond to mantle flow
+    language: Python ≥ 3.10
+    status: Pre-release · private
+    status_key: active
+    description: >-
+      mantlekernels calculates how a planet's surface, core–mantle boundary, and gravity field
+      respond to density differences in its mantle. It solves for mantle flow exactly in a layered,
+      self-gravitating sphere, and it's fast enough to test a density model against many viscosity
+      structures or to run inside a Bayesian inversion.
+    features:
+      - Options for an elastic outer shell, a liquid layer above the core, and imposed plate motions
+      - Checked against analytic solutions, the HC mantle-flow code, and finite-element models
+      - Tools for working with Earth and Mars data
+    logo: assets/img/software/mantlekernels-banner.svg
+    image: assets/img/software/mantlekernels-kernels.png
+    image_alt: Geoid and surface-topography kernels against depth for several spherical-harmonic degrees

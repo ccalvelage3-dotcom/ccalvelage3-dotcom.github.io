@@ -1,0 +1,307 @@
+# Publications, curated from Google Scholar (user _cMv0ogAAAAJ) and ORCID 0009-0005-9807-4255.
+# Full author lists for DOI-bearing works come from Crossref. Conference abstracts list the authors
+# Google Scholar shows; "et al." marks truncated lists.
+#
+# `type` is one of: article | preprint | dataset | thesis | abstract
+# Run `python tools/check_new_pubs.py` to look for new DOI-bearing works on ORCID/OpenAlex.
+# DOIs listed under `exclude` are never suggested (e.g., works mis-attributed on ORCID).
+
+exclude:
+  - 10.1098/rspa.2025.0017   # elastomer constitutive framework: not ours, mis-attributed on ORCID
+
+items:
+  # ---------------------------------------------------------------- peer-reviewed articles
+  - type: article
+    year: 2026
+    title: Determining Rainfall-Induced Runoff Threshold with Distributed Acoustic Sensing
+    authors: McLaughlin, J. M., Calvelage, C. M., Bilek, S. L., Karslioglu, G., & Cadol, D.
+    venue: Seismological Research Letters
+    doi: 10.1785/0220260087
+    themes: [instrumentation]
+
+  - type: article
+    year: 2025
+    title: Common Sensor Platform Project
+    authors: >-
+      Staats, M., Calvelage, C. M., Mann, D., Pyatt, C., Scire, A., Arnell, K., Bayou, N., Chavez, G.,
+      Egert, G., Gallaher, W., Johnson, W., Karslioglu, G., Makarewicz, E., Okal, M., & Mattioli, G. S.
+    venue: Perspectives of Earth and Space Scientists
+    volume: 6(1), e2025CN000298
+    doi: 10.1029/2025CN000298
+    themes: [instrumentation]
+
+  - type: article
+    year: 2025
+    title: >-
+      Effects of subduction history on true polar wander driven by perturbations of Earth's inertial
+      moment from mantle convection
+    authors: Calvelage, C. M., Colli, L., Wu, J., Lin, Y. A., Zheng, Y., & Bajgiran, M. R.
+    venue: Proceedings of the Royal Society A
+    volume: 481(2312), 20240196
+    doi: 10.1098/rspa.2024.0196
+    note: Invited, Foundations of Operational Geodynamics special collection
+    themes: [geodynamics]
+
+  - type: article
+    year: 2024
+    title: Linking deep-time subduction history to modern day expressions of dynamic topography
+    authors: Calvelage, C. M., Wu, J., Colli, L., Lin, Y. A., & Zheng, Y.
+    venue: Proceedings of the Royal Society A
+    volume: 480(2301), 20240254
+    doi: 10.1098/rspa.2024.0254
+    note: Invited, Foundations of Operational Geodynamics special collection
+    themes: [geodynamics]
+
+  - type: article
+    year: 2022
+    title: The role of gravitational body forces in the development of metamorphic core complexes
+    authors: >-
+      Bahadori, A., Holt, W. E., Austermann, J., Campbell, L., Rasbury, E. T., Davis, D. M.,
+      Calvelage, C. M., & Flesch, L. M.
+    venue: Nature Communications
+    volume: 13, 5646
+    doi: 10.1038/s41467-022-33361-2
+    themes: [geodynamics]
+
+  - type: article
+    year: 2022
+    title: >-
+      Coupled influence of tectonics, climate, and surface processes on landscape evolution in
+      southwestern North America
+    authors: >-
+      Bahadori, A., Holt, W. E., Feng, R., Austermann, J., Loughney, K. M., Salles, T., Moresi, L.,
+      Beucher, R., Lu, N., Flesch, L. M., Calvelage, C. M., Rasbury, E. T., Davis, D. M., Potochnik, A.,
+      Ward, W. B., Hatton, K., Haq, S., Smiley, T. M., Wooton, K. M., & Badgley, C.
+    venue: Nature Communications
+    volume: 13, 4437
+    doi: 10.1038/s41467-022-31903-2
+    themes: [geodynamics]
+
+  # ---------------------------------------------------------------- preprints / in review
+  - type: preprint
+    year: 2026
+    title: >-
+      Seismic evidence for a two-stage origin of the October 2026 Budhi Gandaki landslide in the
+      Nepal Himalaya
+    authors: Calvelage, C. M., Huang, S., Chen, C.-M., Wang, B., Pratt-Sitaula, B., & McLaughlin, J. M.
+    venue: EarthArXiv preprint
+    note: Submitted
+    themes: [landslides]
+
+  - type: preprint
+    year: 2026
+    title: >-
+      The June 2026 Socorro swarm: A reactivation of rift-parallel normal faults above the Socorro
+      Magma Body
+    authors: Calvelage, C. M., Aerts, J., Bilek, S. L., & Basu, U.
+    venue: EarthArXiv preprint
+    doi: 10.31223/X56500
+    note: In review
+    themes: [newmexico]
+
+  - type: preprint
+    year: 2026
+    title: >-
+      Climate warming and geological instability primed the catastrophic Rasuwa–Trishuli cascading
+      disaster
+    authors: >-
+      Fan, X., Jansen, J. D., Immerzeel, W. W., Liu, J., Wang, X., Pu, F., Bhuyan, K., Davies, B. J.,
+      Calvelage, C. M., et al. (33 authors)
+    venue: Submitted manuscript
+    note: In review
+    themes: [landslides]
+
+  # ---------------------------------------------------------------- datasets
+  - type: dataset
+    year: 2026
+    title: >-
+      Dataset for: Seismic evidence for a two-stage origin of the October 2026 Budhi Gandaki
+      landslide in the Nepal Himalaya
+    authors: Calvelage, C. M., Huang, S., Chen, C.-M., Wang, B., Pratt-Sitaula, B., & McLaughlin, J. M.
+    venue: Zenodo
+    doi: 10.5281/zenodo.24143591
+    themes: [landslides]
+
+  - type: dataset
+    year: 2026
+    title: EPIC DAS Rainfall/Runoff Dataset
+    authors: McLaughlin, J. M., Calvelage, C. M., Bilek, S. L., Cadol, D., & Karslioglu, G.
+    venue: Zenodo
+    doi: 10.5281/zenodo.18567520
+    themes: [instrumentation]
+
+
+  # ---------------------------------------------------------------- theses
+  - type: thesis
+    year: 2024
+    title: >-
+      Effects of Subduction History on Mantle Convection: Implications for True Polar Wander and
+      Dynamic Topography
+    authors: Calvelage, C. M.
+    venue: Ph.D. dissertation, University of Houston
+    themes: [geodynamics]
+
+  - type: thesis
+    year: 2021
+    title: Investigating the Effects of a Weak Lower Crust on Basin and Range Extensional History
+    authors: Calvelage, C. M.
+    venue: M.S. thesis, Purdue University
+    url: https://search.proquest.com/openview/53744f3fede0560f7e19fff4f9ed263d/1?pq-origsite=gscholar&cbl=18750&diss=y
+    themes: [geodynamics]
+
+  # ---------------------------------------------------------------- conference abstracts
+  - type: abstract
+    year: 2026
+    title: >-
+      Standards and Practices in Hydrology, Seismology, and Near-Surface Geophysics Field Operations:
+      Lessons Learned, Existing Standards, and Community Priorities
+    authors: Dawson, C., Calvelage, C. M., Read, J. S., Marchetto, P., & Sayyadi, S.
+    venue: AGU Annual Meeting 2026, session IN038
+    note: Session, co-convener
+
+  - type: abstract
+    year: 2026
+    title: >-
+      Constraining the Dynamics of the 2026 Rasuwa–Trishuli Rock–Ice Avalanche with Seismic Records
+      and Flow Model Synthetics
+    authors: >-
+      Calvelage, C. M., Fan, X., Jansen, J. D., Immerzeel, W. W., Liu, J., Wang, X., Pu, F., Bhuyan, K.,
+      Davies, B. J., et al. (33 authors)
+    venue: AGU Annual Meeting 2026
+    note: Poster
+    themes: [landslides]
+
+  - type: abstract
+    year: 2026
+    title: >-
+      The June 2026 Socorro swarm: A reactivation of rift-parallel normal faults above the Socorro
+      Magma Body
+    authors: Calvelage, C. M., Aerts, J., Bilek, S. L., & Basu, U.
+    venue: AGU Annual Meeting 2026
+    note: Poster, 11 Dec
+    themes: [newmexico]
+
+  - type: abstract
+    year: 2026
+    title: >-
+      Gravitational Collapse, Weak Lower Crust, and Velocity Boundary Conditions: Primary Factors in
+      Metamorphic Core Complex Development in the American Southwest
+    authors: Bromberg, I. S., Flesch, L. M., Haq, S. S. B., Holt, W. E., Bahadori, A., & Calvelage, C. M.
+    venue: AGU Annual Meeting 2026, T23B-03
+    note: Talk, 8 Dec
+    themes: [geodynamics]
+
+  - type: abstract
+    year: 2026
+    title: >-
+      Breaking Barriers: The Growth, Evolution, and Impact of Seismica as a Diamond Open Access Leader
+    authors: >-
+      Teplitzky, S., Mark, H. F., Rowe, C. D., Funning, G., Rychert, C., Calvelage, C. M., & Shams, R.
+      (Seismica Editorial Board)
+    venue: AGU Annual Meeting 2026
+    note: Poster, 7 Dec
+
+  - type: abstract
+    year: 2025
+    title: "A Fiber Install of EPIC Proportion: DAS in a Semi-Arid Environment"
+    authors: Calvelage, C. M., Karslioglu, G., Chavez, G., Arnell, K., & King, C.
+    venue: AGU Fall Meeting 2025, S21D-0216
+
+  - type: abstract
+    year: 2025
+    title: The Portable Common Sensor Platform Prototype
+    authors: Calvelage, C. M., Mann, D., Staats, M., Pyatt, C., Scire, A., Arnell, K., Chavez, G., et al.
+    venue: AGU Fall Meeting 2025, H21V-1273
+
+  - type: abstract
+    year: 2025
+    title: "DICE: DAS Interrogator Comparison Experiment"
+    authors: Stanciu, C., Ichinose, G. A., Donahue, C., Karslioglu, G., Calvelage, C. M., et al.
+    venue: AGU Fall Meeting 2025, S21D-VR8993
+
+  - type: abstract
+    year: 2025
+    title: >-
+      Characterizing Natural and Anthropogenic Signals Using Dual DAS Interrogators at the EarthScope
+      Primary Instrument Center
+    authors: Bahaelou Horeh, E., Karslioglu, G., & Calvelage, C. M.
+    venue: AGU Fall Meeting 2025, S21D-0214
+
+  - type: abstract
+    year: 2025
+    title: Imaging the Near Surface Using DAS Ambient Noise Autocorrelation Functions in Central New Mexico
+    authors: Zhang, Y., Calvelage, C. M., Bilek, S. L., Portner, D. E., McLaughlin, J. M., & Wei, S. S.
+    venue: AGU Fall Meeting 2025, S21D-0225
+
+  - type: abstract
+    year: 2025
+    title: Observations of Rainfall and Runoff Generation with Distributed Acoustic Sensing (DAS)
+    authors: McLaughlin, J. M., Bilek, S. L., Calvelage, C. M., Cadol, D. D., & Karslioglu, G.
+    venue: AGU Fall Meeting 2025, S33C-028
+
+  - type: abstract
+    year: 2025
+    title: TOMOPAC, a new class of circum-Pacific plate reconstructions for geodynamic and geologic studies
+    authors: Wu, J., Chen, Y. W., Calvelage, C. M., Colli, L., Lin, Y. A., Fuston, S., Wu, T. J., et al.
+    venue: AGU Fall Meeting 2025, GP41B-0351
+
+  - type: abstract
+    year: 2025
+    title: >-
+      Effects of Gravitational Collapse on High Topography and Laterally Varying Weak Lower Crust in the
+      Western US
+    authors: Bromberg, I. S., Flesch, L. M., Holt, W. E., Bahadori, A., & Calvelage, C. M.
+    venue: AGU Fall Meeting 2025, T21A-02
+
+  - type: abstract
+    year: 2023
+    title: Earth's Wandering Rotation Axis as a Diagnostic for Global Mantle Convection Models
+    authors: Calvelage, C. M., Colli, L., Wu, J., & Lin, Y. A.
+    venue: EGU General Assembly 2023, EGU-10292
+    doi: 10.5194/egusphere-egu23-10292
+
+  - type: abstract
+    year: 2023
+    title: >-
+      Lithosphere and Mantle Dynamics in the Basin and Range Province and Colorado Plateau: Landscape
+      Evolution and Grand Canyon Development
+    authors: Bahadori, A., Holt, W. E., Austermann, J., Campbell, L., Calvelage, C. M., et al.
+    venue: AGU Fall Meeting 2023, DI31A-04
+
+  - type: abstract
+    year: 2023
+    title: Effects of Gravitational Collapse on High Topography in the Evolution of the Western US
+    authors: Bromberg, I., Flesch, L. M., Holt, W. E., Bahadori, A., & Calvelage, C. M.
+    venue: AGU Fall Meeting 2023, DI33B-0033
+
+  - type: abstract
+    year: 2022
+    title: Earth's Wandering Rotation Axis as a Diagnostic for Global Mantle Convection Models
+    authors: Calvelage, C. M., Colli, L., Wu, J., & Lin, Y. A.
+    venue: AGU Fall Meeting 2022, DI45A-0011
+    note: AGU Outstanding Student Presentation Award
+
+  - type: abstract
+    year: 2022
+    title: >-
+      A fossil signature of collapsed highlands: the gravitational body forces effect on dynamics and
+      structural development of metamorphic core complexes
+    authors: Bahadori, A., Holt, W. E., Austermann, J., Rasbury, E. T., Davis, D. M., Campbell, L., … Calvelage, C. M., et al.
+    venue: AGU Fall Meeting 2022, T26B-02
+
+  - type: abstract
+    year: 2022
+    title: >-
+      Deciphering the Landscape History in Southwestern North America Since the Late Eocene Using the
+      Coupled Influence of Tectonics, Climate, and Surface Processes
+    authors: Bahadori, A., Holt, W. E., Austermann, J., Rasbury, E. T., Feng, R., Loughney, K. M., … Calvelage, C. M., et al.
+    venue: GSA Annual Meeting 2022, Abstracts with Programs 54
+    doi: 10.1130/abs/2022AM-382934
+
+  - type: abstract
+    year: 2019
+    title: >-
+      From Highlands to Basin and Range Province: the role of lithospheric geodynamic evolution in
+      southwestern North America since Late Eocene
+    authors: Bahadori, A., Holt, W. E., Flesch, L. M., & Calvelage, C.
+    venue: AGU Fall Meeting 2019, T43E-0477

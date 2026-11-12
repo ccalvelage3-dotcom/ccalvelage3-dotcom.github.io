@@ -1,0 +1,105 @@
+# Web CV, adapted from the October 2026 CV.
+# Phone number and personal email are left off on purpose.
+
+education:
+  - degree: Ph.D., Geophysics
+    school: University of Houston
+    year: 2024
+    detail: >-
+      Dissertation: Effects of Subduction History on Mantle Convection: Implications for True Polar
+      Wander and Dynamic Topography
+  - degree: M.S., Geophysics
+    school: Purdue University
+    year: 2021
+    detail: "Thesis: Investigating the Effect of a Weak Lower Crust on Basin and Range Extensional History"
+  - degree: B.S., Geology and Geophysics
+    school: Purdue University
+    year: 2019
+
+experience:
+  - title: Sensor Group Manager
+    org: EarthScope Consortium
+    dates: 2025 – present
+    points:
+      - >-
+        Manage the budget and operations of the Sensor Group, which tests and evaluates broadband and
+        short-period seismometers, accelerometers, infrasound sensors, ground-penetrating radar, and DAS.
+      - Geophysical instrumentation subject-matter expert for EarthScope engineering groups and the user community.
+      - Lead special projects; help the EarthScope Portable Program manager administer a ~$10M/year budget.
+  - title: Sensor Testing and Evaluation Engineer
+    org: EarthScope Consortium
+    dates: 2024 – 2025
+    points:
+      - Tested and evaluated NSF-sponsored broadband, midband, short-period, and infrasound instruments.
+      - Developed test plans and standard operating procedures for new sensors.
+  - title: R&D Student Researcher
+    org: Sandia National Laboratories
+    dates: 2022; 2023 – 2024
+    points:
+      - Led a GNSS field deployment to collect ionospheric data for locating events.
+      - Detected fracture events with acoustic emissions in laboratory and field experiments.
+  - title: Research & Teaching Assistant
+    org: Center for Tectonics and Tomography, University of Houston
+    dates: 2021 – 2024
+    points:
+      - Studied mantle convection and true polar wander with models that assimilate new plate reconstructions.
+      - Compared dynamic topography predicted by models with different plate reconstructions against global observations.
+  - title: Head Teaching Assistant / Laboratory Coordinator
+    org: Dept. of Earth and Atmospheric Sciences, University of Houston
+    dates: 2023 – 2024
+    points:
+      - Managed laboratory materials and the teaching guide for 5+ sections of Physical Geology and ~20 teaching assistants.
+
+grants:
+  - "2024: UH Research Computing Data Core allocation renewal, 1.5 million compute hours (co-PI with J. Wu and D. Woodworth)"
+  - "2023: UH Research Computing Data Core allocation, 1.5 million compute hours (co-PI with J. Wu and D. Woodworth)"
+
+service:
+  - Editor, <em>Seismica</em> (2026 – present)
+  - Co-convener, AGU26 session IN038, Standards and Practices in Hydrology, Seismology, and Near-Surface Geophysics Field Operations (2026)
+  - Member, AGU Distributed Sensing Technical Committee (2025 – present)
+  - Subject-matter expert, NNSA NA-22 Independent Assessment Program (2025 – present)
+  - "Common Sensor Platform project: co-leader of the Design and Power Systems groups; Writing Group member"
+  - Member, eQuip Working Group (maintenance-tracking subgroup)
+  - Organizer, UH Plate Tectonics and Paleomagnetics Symposium
+  - Mentor to undergraduate researcher, University of Houston
+  - Contributor, open-source textbook and teaching guide for physical geology
+  - Geophysics Chair, UH EAS Graduate Student Association (2022 – 2024)
+  - President, Purdue EAPS Graduate Student Association (2020 – 2021)
+
+talks:
+  - CTEMPS Distributed Acoustic Sensing Workshop (2025)
+  - EarthScope Lunch &amp; Learn (Nov 2024; Apr 2025)
+  - Invited technical presentation, ExxonMobil (2023)
+  - Invited scientific visit, LMU Munich (2023)
+  - K–12 outreach at Angola Middle School, Purdue EAPS Passport Day, and Purdue AP Friday
+
+awards:
+  - year: 2024/25
+    name: EarthScope On-the-Spot Award
+  - year: "2023"
+    name: UH Outstanding Ph.D. Student in Geophysics
+  - year: "2023"
+    name: AGU Outstanding Student Presentation Award (Fall Meeting 2022)
+  - year: "2022"
+    name: Sandia National Laboratories Certificate of Excellence
+  - year: "2022"
+    name: UH Outstanding First-Year Ph.D. Student in Geophysics
+  - year: 2021–23
+    name: University of Houston Presidential Fellowship (×3)
+  - year: "2021"
+    name: Michael C. Gardner Memorial Award; Mobil Oil Geology Award; Terry R. West Award
+  - year: "2020"
+    name: William J. Hinze Award
+
+skills: >-
+  Python, Julia, MATLAB, Rust, Fortran; TERRA mantle-convection code; COMSOL Multiphysics; GMT;
+  Seismic Unix; ObsPy; CAD/FreeCAD; Linux. Vault and pier testing of seismometers and accelerometers;
+  infrasound, magnetotelluric, GPR, and DAS testing; station power-system noise testing; Nanometrics,
+  Quanterra, Kinemetrics, and Streckeisen equipment.
+
+memberships:
+  - American Geophysical Union
+  - Seismological Society of America
+  - European Geosciences Union
+  - Association of Environmental and Engineering Geologists

@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% from "_macros.html" import email_link %}
+{% block content %}
+
+{# ------------------------------------------------------------------ hero #}
+<section class="hero{% if wave_bg %} hero--waterfall{% endif %}">
+  {% if wave_bg %}<img class="hero__waterfall" src="{{ wave_bg | v }}" alt="" aria-hidden="true">{% endif %}
+  <div class="hero__top">
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <p class="eyebrow">{{ profile.role }} · {{ profile.org }}</p>
+      <h1>{{ profile.name }}<span class="hero__cred">, {{ profile.credentials }}</span></h1>
+      <p class="hero__tagline">{{ profile.tagline | trim }}</p>
+      <ul class="hero__links">
+        <li>{{ email_link("Email", "btn btn--solid") }}</li>
+        {% if profile.linkedin %}<li><a class="btn" href="{{ profile.linkedin }}">LinkedIn</a></li>{% endif %}
+        {% for l in profile.links %}<li><a class="btn" href="{{ l.url }}">{{ l.label }}</a></li>{% endfor %}
+        <li><a class="btn" href="cv.html">CV</a></li>
+      </ul>
+    </div>
+    <div class="hero__portrait">
+      {% if profile.headshot %}
+        <img src="{{ profile.headshot | v }}" alt="Portrait of {{ profile.name }}" width="320" height="320">
+      {% else %}
+        <span class="monogram" aria-hidden="true">CC</span>
+      {% endif %}
+    </div>
+  </div>
+  </div>
+  <svg class="hero__wave" viewBox="0 0 1200 120" preserveAspectRatio="none" role="img"
+       aria-label="{{ wave_caption or 'Seismogram' }}">
+    <path d="{{ wave }}" />
+  </svg>
+  {% if wave_caption %}<p class="wrap hero__caption">{{ wave_caption }}</p>{% endif %}
+</section>
+
+{# ------------------------------------------------------------------ about + recent #}
+<section class="section" id="about">
+  <div class="wrap about">
+    <div class="about__text">
+      <h2 class="section__title">About</h2>
+      {% for para in profile.bio %}<p>{{ para | safe_html }}</p>{% endfor %}
+    </div>
+    {% if profile.recent %}
+    <aside class="about__aside" aria-labelledby="recent-h">
+      <h3 class="label" id="recent-h">Recent</h3>
+      <ul class="recent">
+        {% for r in profile.recent %}
+        <li>
+          <span class="recent__date mono">{{ r.date }}</span>
+          <span class="recent__text">{% if r.url %}<a href="{{ r.url }}">{{ r.text | safe_html }}</a>{% else %}{{ r.text | safe_html }}{% endif %}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </aside>
+    {% endif %}
+  </div>
+</section>
+
+{# ------------------------------------------------------------------ research themes #}
+<section class="section section--tint" id="research">
+  <div class="wrap">
+    <h2 class="section__title">Research</h2>
+    {% if research.intro %}<p class="section__lede">{{ research.intro | trim }}</p>{% endif %}
+    <div class="tpanels">
+      {% for t in research.themes %}{% set f = t.figure_project %}
+      <article class="tpanel" id="theme-{{ t.id }}">
+        {% if f %}
+        <div class="tpanel__fig">
+          <a href="{{ f.image | v }}" data-lightbox
+             data-caption="{{ f.title }}{% if f.credit %}. {{ f.credit }}{% endif %}"
+             aria-label="Enlarge figure: {{ f.title }}">
+            <img src="{{ f.image | v }}" alt="{{ f.image_alt }}" loading="lazy">
+          </a>
+        </div>
+        {% endif %}
+        <div class="tpanel__body">
+          <p class="tpanel__num mono">{{ '%02d' % loop.index }}</p>
+          <h3 class="tpanel__title"><a href="research.html#{{ t.id }}">{{ t.title }}</a></h3>
+          <p class="tpanel__blurb">{{ t.blurb | trim | safe_html }}</p>
+          {% if t.highlight_projects %}
+          <ul class="tpanel__list">
+            {% for p in t.highlight_projects %}
+            <li>
+              <a href="research.html#{{ p.id }}">{{ p.title }}</a>
+              <span class="status status--{{ p.status }}">{{ status_labels.get(p.status, p.status) }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+          <a class="tpanel__more" href="research.html#{{ t.id }}">{% if t.n > 1 %}All {{ t.n }} projects in this theme{% else %}More on this theme{% endif %} →</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <p class="research-more">
+      <a class="btn btn--solid" href="research.html">See all {{ n_projects }} projects →</a>
+    </p>
+  </div>
+</section>
+
+{# ------------------------------------------------------------------ software #}
+<section class="section" id="software">
+  <div class="wrap">
+    <h2 class="section__title">Software</h2>
+    {% if software.intro %}<p class="section__lede">{{ software.intro | trim }}</p>{% endif %}
+    <div class="software">
+      {% for s in software['items'] %}
+      <article class="sw" id="{{ s.anchor }}">
+        <div class="sw__fig">
+          <a href="{{ s.image | v }}" data-lightbox data-caption="{{ s.name }}: {{ s.tagline }}" aria-label="Enlarge figure: {{ s.name }}">
+            <img src="{{ s.image | v }}" alt="{{ s.image_alt }}" loading="lazy">
+          </a>
+        </div>
+        <div class="sw__body">
+          <p class="card__meta">
+            <span class="status status--{{ s.status_key }}">{{ s.status }}</span>
+            <span class="card__venue mono">{{ s.language }}</span>
+          </p>
+          <h3 class="sw__name">
+            {% if s.logo %}<span class="sw__logo"><img src="{{ s.logo | v }}" alt="{{ s.name }}"></span>
+            {% else %}<span class="mono">{{ s.name }}</span>{% endif %}
+          </h3>
+          <p class="sw__tagline">{{ s.tagline }}</p>
+          <p>{{ s.description | trim | safe_html }}</p>
+          {% if s.features %}
+          <ul class="sw__features">{% for f in s.features %}<li>{{ f | safe_html }}</li>{% endfor %}</ul>
+          {% endif %}
+          {% if s.related %}<p class="card__links">{% for l in s.related %}<a href="{{ l.url }}">{{ l.label }} →</a>{% endfor %}</p>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ------------------------------------------------------------------ publications #}
+<section class="section section--tint" id="publications">
+  <div class="wrap">
+    <div class="pubs__head">
+      <h2 class="section__title">Publications</h2>
+      <p class="pubs__src">
+        Complete and current list on
+        <a href="{{ profile.links[0].url }}">Google Scholar</a> and
+        <a href="{{ profile.links[1].url }}">ORCID</a>.
+      </p>
+    </div>
+    {% for g in pub_groups %}
+      {% if g.key == 'abstract' %}
+      <details class="pubgroup pubgroup--fold">
+        <summary><h3 class="pubgroup__title">{{ g.title }} <span class="count mono">{{ g['items'] | length }}</span></h3></summary>
+      {% else %}
+      <div class="pubgroup">
+        <h3 class="pubgroup__title">{{ g.title }} <span class="count mono">{{ g['items'] | length }}</span></h3>
+      {% endif %}
+        <ol class="publist">
+          {% for p in g['items'] %}
+          <li class="pub">
+            <span class="pub__year mono">{{ p.year }}</span>
+            <div>
+              <p class="pub__title">
+                {% if p.doi %}<a href="https://doi.org/{{ p.doi }}">{{ p.title | trim }}</a>
+                {% elif p.url %}<a href="{{ p.url }}">{{ p.title | trim }}</a>
+                {% else %}{{ p.title | trim }}{% endif %}
+              </p>
+              <p class="pub__authors">{{ p.authors | authors }}</p>
+              <p class="pub__venue"><em>{{ p.venue }}</em>{% if p.volume %}, {{ p.volume }}{% endif %}{% if p.note %} · <span class="pub__note">{{ p.note }}</span>{% endif %}</p>
+            </div>
+          </li>
+          {% endfor %}
+        </ol>
+      {% if g.key == 'abstract' %}</details>{% else %}</div>{% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}
