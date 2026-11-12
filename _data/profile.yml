@@ -1,7 +1,7 @@
 # Site-wide profile. Edit freely; run `python build.py` to regenerate.
 name: Christopher M. Calvelage
 # Public address of the site, used for link previews and the sitemap.
-site_url: https://ccalvelage3-dotcom.github.io
+site_url: https://calvelage.github.io
 short_name: Chris Calvelage
 credentials: Ph.D.
 role: Sensor Group Manager
@@ -21,7 +21,7 @@ links:
   - label: ORCID
     url: https://orcid.org/0009-0005-9807-4255
   - label: GitHub
-    url: https://github.com/ccalvelage3-dotcom
+    url: https://github.com/calvelage
 # Shown beside the bio, newest first. `url` is optional.
 recent:
   - date: Dec 2026

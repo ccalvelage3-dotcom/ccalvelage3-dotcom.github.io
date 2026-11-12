@@ -1,4 +1,4 @@
-# ccalvelage3-dotcom.github.io
+# calvelage.github.io
 
 Personal website of Christopher M. Calvelage. A small static site: content lives in YAML files,
 `build.py` renders it with Jinja2 into `_site/`, and a GitHub Actions workflow publishes `_site/`
