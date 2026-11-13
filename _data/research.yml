@@ -1,8 +1,9 @@
 # Research themes and project cards.
 #
-# status: published | preprint | in-review | in-prep | active | report
+# status: published | preprint | posted | in-review | in-prep | active | report
 #   published  peer-reviewed paper
 #   preprint   preprint posted and under review
+#   posted     preprint posted, not yet under journal review
 #   in-review  submitted to a journal
 #   in-prep    results in hand, manuscript being written
 #   active     analysis under way, no manuscript yet
@@ -149,7 +150,7 @@ themes:
 
       - id: budhi
         title: The 2026 Budhi Gandaki rock avalanche and flood
-        status: submitted
+        status: preprint
         venue: EarthArXiv, 2026
         summary: >-
           In October 2026, a rock avalanche dammed a tributary of the Budhi Gandaki in central Nepal,
@@ -161,6 +162,8 @@ themes:
         image_alt: Simulated flow of the Budhi Gandaki rock avalanche 5 minutes into the model run, over shaded relief
         collaborators: S. Huang, C.-M. Chen, B. Wang, B. Pratt-Sitaula, J. M. McLaughlin
         links:
+          - label: Read the preprint
+            url: https://doi.org/10.31223/X5C53P
           - label: Data & code
             url: https://doi.org/10.5281/zenodo.24143591
 

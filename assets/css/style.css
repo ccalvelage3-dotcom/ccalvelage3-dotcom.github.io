@@ -341,7 +341,7 @@ p { margin: 0 0 1em; }
   padding: 5px 8px; border-radius: 4px; border: 1px solid transparent;
 }
 .status--published { background: var(--green); color: #fff; }
-.status--preprint, .status--in-review, .status--submitted { background: var(--amber-soft); color: var(--amber); }
+.status--preprint, .status--posted, .status--in-review, .status--submitted { background: var(--amber-soft); color: var(--amber); }
 .status--in-prep { background: var(--purple-soft); color: var(--purple-ink); }
 .status--active { background: transparent; color: var(--muted); border: 1px dashed currentColor; }
 .status--report { background: transparent; color: var(--green-ink); border: 1px solid currentColor; }

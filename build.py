@@ -30,6 +30,7 @@ OWNER_SURNAME = "Calvelage"
 STATUS_LABELS = {
     "published": "Published",
     "preprint": "Preprint · in review",
+    "posted": "Preprint",
     "in-review": "In review",
     "submitted": "Submitted",
     "in-prep": "Manuscript in preparation",

@@ -30,8 +30,8 @@ recent:
     text: AGU26 posters on the Rasuwa–Trishuli avalanche and the Socorro swarm, plus co-authored abstracts on <em>Seismica</em> and Basin and Range core complexes
     url: index.html#publications
   - date: Nov 2026
-    text: Preprint on the October 2026 Budhi Gandaki rock avalanche submitted, with its data and code on Zenodo
-    url: research.html#budhi
+    text: Preprint on the October 2026 Budhi Gandaki rock avalanche, with its data and code on Zenodo
+    url: https://doi.org/10.31223/X5C53P
   - date: Sep 2026
     text: An international study of the Rasuwa–Trishuli rock–ice avalanche, including our seismic analysis, is now in review
     url: research.html#rasuwa
